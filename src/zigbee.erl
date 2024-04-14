@@ -216,7 +216,7 @@ init([]) ->
 
 handle_call({call,Name,Function, Args}, _From, State) ->
     
-    Reply=case rpc:call(node(),lib_zigbee,get_num_map_module,[Name],5000) of
+    Reply=case rpc:call(node(),lib_zigbee_service,get_num_map_module,[Name],5000) of
 	      {badrpc,Reason}->
 		  {error,["badrpc ",Reason,?MODULE,?LINE]};
 	     {error,Reason}->
@@ -229,17 +229,17 @@ handle_call({call,Name,Function, Args}, _From, State) ->
 
 handle_call({all_raw}, _From, State) ->
    % Reply = case rd:call(lgh_prhoscon,get_maps,[],5000) of
-    Reply =lib_zigbee:all_raw(),
+    Reply =lib_zigbee_service:all_raw(),
     {reply, Reply, State};
 
 handle_call({all}, _From, State) ->
    % Reply = case rd:call(lgh_prhoscon,get_maps,[],5000) of
-    Reply =lib_zigbee:all(),
+    Reply =lib_zigbee_service:all(),
     {reply, Reply, State};
 
 
 handle_call({present}, _From, State) ->
-    Reply = lib_zigbee:present(),
+    Reply = lib_zigbee_service:present(),
     
     {reply, Reply, State};
 
