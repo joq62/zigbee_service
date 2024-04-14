@@ -1,5 +1,5 @@
 %% I provide following Resources 
--define(LocalResourceTuples,[{zigbee_devices,{zigbee_devices,node()}}]).
+-define(LocalResourceTuples,[{zigbee,{zigbee,node()}}]).
 
 %% I want following resource types
--define(TargetTypes,[phoscon_control,etcd]). 
+-define(TargetTypes,[phoscon]). 
