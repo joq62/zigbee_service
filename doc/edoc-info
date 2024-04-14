@@ -1,0 +1,6 @@
+%% encoding: UTF-8
+{application,zigbee_service}.
+{modules,[lib_zigbee_service,lumi_magnet,lumi_motion,lumi_vibration,
+          lumi_weather,tradfri_bulb_E14_ws_candleopal_470lm,
+          tradfri_bulb_e27_cws_806lm,tradfri_control_outlet,tradfri_motion,
+          zigbee]}.
